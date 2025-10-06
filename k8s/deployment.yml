@@ -13,8 +13,8 @@ spec:
         app: nextjs-app
     spec:
       containers:
-        - name: nextjs
-          image: ghcr.io/<your-github-username>/<your-repo-name>:latest
+        - name: nextjs-app
+          image: ghcr.io/goldstealth/nest_js_devops_assignment:latest
           ports:
             - containerPort: 3000
           readinessProbe:
@@ -29,3 +29,5 @@ spec:
               port: 3000
             initialDelaySeconds: 15
             periodSeconds: 20
+      imagePullSecrets:
+        - name: ghcr-secret
